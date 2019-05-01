@@ -1,0 +1,25 @@
+<!--The main page of the app-->
+
+<!--The template of the page-->
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+<!--The body tag begins-->
+{% block body %}
+<section class="header">
+  <h2 class="title">Planning is Good</h2>
+  <div class="row">
+    <!--The form in the center of the 3 columns to add new goal-->
+    <div class="three columns value-prop"></div>
+    <div class="six columns">
+      <form action="{% url 'lists:new_todolist' %}" method=post>
+        {% csrf_token %}
+        <dl>
+          <dd>{{ form }}
+          <dt><input type="submit" class="button button-primary" value="ADD">
+        </dl>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

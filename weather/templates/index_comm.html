@@ -1,0 +1,21 @@
+<!--The weather block-->
+<!--Applying the template of the page-->
+{% extends "base.html" %}
+
+<!--The body tag o the HTML pahe begins-->
+{% block body %}
+<section class="header">
+  <!-- The title of the page -->
+  <h2 class="title">Weather in top <span class="it">&#10098; IT &#10099;</span> city</h2>
+<!--  The block which displays the weather in Lviv-->
+  <div class="block">
+    <!--The type of weather(sunny/rainy)-->
+    <div id="description"></div>
+    <!--The temperature itself-->
+    <h1 id="temp"></h1>
+    <!--The city the weather displays is-->
+    <div id="location"></div>
+  </div>
+</section>
+<!--The end of the body tag-->
+{% endblock %}

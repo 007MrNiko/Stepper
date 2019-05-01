@@ -1,0 +1,28 @@
+<!--The login page-->
+
+<!--The template of the page-->
+{% extends "base.html" %}
+
+<!--The body tag begins-->
+{% block body %}
+<section class="header">
+  <!--The content of the page-->
+  <h2 class="title">Login</h2>
+<!--  The form of login-->
+  <div class="row">
+    <div class="three columns value-prop"></div>
+    <div class="six columns">
+      <!--The form itself-->
+      <form method=post>
+        {% csrf_token %}
+        <dl>
+          <dd>{{ form }}
+          <dt><input type="submit" class="button button-primary" value="Login">
+        </dl>
+      </form>
+      <!--The link to registering form-->
+      <p>New user? <a href="{% url 'auth:register' %}">Click here to register</a>.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!--The register form-->
+
+<!--The template of the page-->
+{% extends "base.html" %}
+
+<!--The body tag begins-->
+{% block body %}
+<section class="header">
+  <h2 class="title">Register</h2>
+<!--  The registration form, divided by three columns, and the form is in the second(center)-->
+  <div class="row">
+    <div class="three columns value-prop"></div>
+    <div class="six columns">
+      <!--The form itself-->
+      <form method=post>
+        {% csrf_token %}
+        <dl>
+          <dd>{{ form }}
+          <dt><input type="submit" class="button button-primary" value="Register">
+        </dl>
+      </form>
+      <!--The link to log in if the acount is already created-->
+      <p>Already registerd? <a href="{% url 'auth:login' %}">Click here to login</a>.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
